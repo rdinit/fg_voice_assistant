@@ -1,7 +1,6 @@
 from utils import SocketConnector, JsonConnctor
 from t154ru import Addon
 
-#run fg with --native=socket,out,10,127.0.0.1,5703,udp
 
 addon = Addon()
 

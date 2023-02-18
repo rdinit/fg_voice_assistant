@@ -1,11 +1,5 @@
 from text_to_num import text2num
 
-#Update rate
-HIGH_RATE = 1
-MID_RATE = 5
-LOW_RATE = 10
-
-
 
 class Addon():
     text = ''

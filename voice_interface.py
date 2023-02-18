@@ -9,6 +9,7 @@ from utils import SocketConnector
 
 
 VOICE_ID = 4
+VOSK_PATH = r'C:\Path\to\model\model'
 
 voice_engine = pyttsx3.init()
 voices = voice_engine.getProperty('voices')
@@ -18,7 +19,7 @@ voice_engine.setProperty('voice', voices[VOICE_ID].id)
 device = 0
 device_info = sd.query_devices(device, 'input')
 samplerate = int(device_info['default_samplerate'])
-model = vosk.Model(r'C:\Path\to\model\model')
+model = vosk.Model(VOSK_PATH)
 
 q = queue.Queue()
 
