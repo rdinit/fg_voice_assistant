@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <generic>
+
+  <output>
+   <binary_mode>true</binary_mode>
+
+  <!-- note that chunk ordering/typing is critical here and needs to match the C struct below -->
+
+   <chunk>
+    <name>0</name>
+    <type>int</type>
+    <node>/fdm/jsbsim/instrumentation/vc-kmh</node>
+   </chunk>
+  <chunk>
+    <name>1</name>
+    <type>int</type>
+    <node>/fdm/jsbsim/instrumentation/v-1</node>
+   </chunk>
+   <chunk>
+    <name>2</name>
+    <type>int</type>
+    <node>/fdm/jsbsim/instrumentation/v-r</node>
+   </chunk>
+   <chunk>
+    <name>3</name>
+    <type>int</type>
+    <node>/fdm/jsbsim/instrumentation/v-2</node>
+   </chunk>
+  <!-- any chunks added here, also need to be added to the C struct below -->
+
+  </output>
+
+    <input>
+   <binary_mode>true</binary_mode>
+
+  <!-- note that chunk ordering/typing is critical here and needs to match the C struct below -->
+
+   <chunk>
+    <name>altitude</name>
+    <type>int</type>
+    <node>/position/altitude-ft</node>
+   </chunk>
+    <chunk>
+    <name>altitudeoffset</name>
+    <type>double</type>
+    <node>/tu154/switches/pito-heat</node>
+   </chunk>
+  <!-- any chunks added here, also need to be added to the C struct below -->
+
+  </input>
+
+ </generic>
+
+</PropertyList>
