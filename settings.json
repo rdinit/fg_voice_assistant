@@ -1,0 +1,13 @@
+{   
+    "main_ip": "127.0.0.1",
+    "voice_ip": "127.0.0.1",
+    "voice_in": 5701,
+    "voice_out": 5702,
+    "voice_buffer_size": 2048,
+    "fg_ip": "127.0.0.1",
+    "fg_in": 5704,
+    "fg_out": 5703,
+    "fg_phi": 8081,
+    "voice_id": 4,
+    "vosk_path": "path_to_vosk_model"
+}

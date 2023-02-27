@@ -24,7 +24,6 @@ class Addon():
         self.SPEEDS_BORDERS[7] = self.properties[3]
 
 
-    speed_updating = LOW_RATE
     speed_flag = -1
     def voice_speed(self):
         #---
@@ -33,11 +32,8 @@ class Addon():
         new_speed_flag = sorted(self.SPEEDS_BORDERS + [speed]).index(speed) - 1
         if self.speed_flag != new_speed_flag:
             self.speed_flag = new_speed_flag
-            speed_updating = HIGH_RATE
             if self.speed_flag == 2:
                 self.update_speed()
-            elif self.speed_flag == 7:
-                speed_updating = LOW_RATE
             return self.SPEEDS_WORDS[self.speed_flag]
         return ''
 

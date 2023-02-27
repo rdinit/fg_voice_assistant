@@ -7,25 +7,24 @@ import vosk
 
 from utils import SocketConnector
 
+settings = json.load(open('settings.json'))
 
-VOICE_ID = 4
-VOSK_PATH = r'C:\Path\to\model\model'
 
 voice_engine = pyttsx3.init()
 voices = voice_engine.getProperty('voices')
 
-voice_engine.setProperty('voice', voices[VOICE_ID].id)
+voice_engine.setProperty('voice', voices[settings['voice_id']].id)
 
 device = 0
 device_info = sd.query_devices(device, 'input')
 samplerate = int(device_info['default_samplerate'])
-model = vosk.Model(VOSK_PATH)
+model = vosk.Model(settings['vosk_path'])
 
 q = queue.Queue()
 
 mic_blocked = False
 
-connector = SocketConnector('127.0.0.1', 5701, 5702, buffer_size=2048)
+connector = SocketConnector(settings['main_ip'], settings['voice_in'], settings['voice_out'], buffer_size=settings['voice_buffer_size'])
 
 def callback(indata, frames, time, status):
     if status:
